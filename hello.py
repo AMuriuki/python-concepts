@@ -1,16 +1,16 @@
-import sys
+import argparse
 
 
 def main():
     '''
-    - takes a command line arguments
-    - problems:
-        1. If no argmuent is specified
-            IndexError: list index out of range
-        2. If more than one argument is passed
-            Will consider only the first arg 
+    - uses `argparse` argument parser to exceptions 
+    - from previous issues
     '''
-    print(f'Hello there {sys.argv[1]}')
+    parser = argparse.ArgumentParser()
+    # defines one positional argument named person
+    parser.add_argument('person')
+    args = parser.parse_args()
+    print(f'Hello there {args.person}')
 
 
 if __name__ == '__main__':
